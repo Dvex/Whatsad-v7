@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Hide the submit button after clicked to prevent/reduce duplicate postings.
+ *
+ * Installation and update procedures are defined in this file
+ */
+
+
+/**
+ * Implement hook install
+ */
+function hide_submit_install() {
+  // TODO update_sql has been removed. Use the database API for any schema or data changes.
+  // update_sql("UPDATE {system} SET weight = 10 WHERE type = 'module' AND name = 'hide_submit'");
+  drupal_set_message( st('Hide submit module installed.') );
+}
+
+/**
+ * Implement hook uninstall
+ */
+function hide_submit_uninstall() {
+  // Delete any variables that have been set.
+  // TODO convert this statement to the D7 database API syntax.
+  $result = db_query("SELECT name FROM {variable} WHERE name LIKE 'hide_submit_%'");
+  while ($row = db_fetch_object($result)) {
+    variable_del($row->name);
+  }
+
+  drupal_set_message( st('Hide submit module variables deleted.<br />To completely remove this module, delete the hide_submit directory from your files directory.') );
+}

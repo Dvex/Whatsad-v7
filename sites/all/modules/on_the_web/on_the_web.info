@@ -1,0 +1,14 @@
+name = On The Web
+description = A block that provides linked icons to your other presences on the web.
+core = 7.x
+
+dependancies[] = block
+
+
+
+; Information added by drupal.org packaging script on 2011-08-12
+version = "7.x-1.2"
+core = "7.x"
+project = "on_the_web"
+datestamp = "1313109914"
+

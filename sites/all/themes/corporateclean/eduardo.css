@@ -1,0 +1,18 @@
+body div#banner div.region div#block-on-the-web-0.block div.content span.on-the-web{
+	display: inline-block;
+}
+
+body div#banner div.region div#block-on-the-web-0.block{
+	position: relative;
+	left: 97em;
+}
+
+body div#banner div.region div#block-on-the-web-0.block h2{
+	left: -8em;
+    position: absolute;
+    top: -1em;
+}
+
+body div#content div#content-inside.inside div#main h1{
+	display: none;
+}

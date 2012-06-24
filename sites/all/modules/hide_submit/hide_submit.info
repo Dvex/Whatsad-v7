@@ -1,0 +1,13 @@
+name = "Hide submit button"
+description = "Hide submit button after clicked to avoid duplicate posting"
+
+configure = admin/config/content/hide-submit 
+core = 7.x
+
+
+; Information added by drupal.org packaging script on 2011-12-06
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "hide_submit"
+datestamp = "1323130988"
+
