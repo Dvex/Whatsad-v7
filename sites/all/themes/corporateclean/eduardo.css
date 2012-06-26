@@ -8,11 +8,55 @@ body div#banner div.region div#block-on-the-web-0.block{
 }
 
 body div#banner div.region div#block-on-the-web-0.block h2{
-	left: -8em;
+	left: -8.3em;
     position: absolute;
     top: -1em;
 }
 
 body div#content div#content-inside.inside div#main h1{
 	display: none;
+}
+
+body div#content div#content-inside.inside div#main div.region div#block-system-main.block div.content div.node-anuncios div.submitted{
+	margin: 0;
+}
+
+body div#content div#content-inside.inside div#main div.region div#block-system-main.block div.content div.node-anuncios div.content div.field-name-field-image{
+	left: 15em;
+	position: relative;
+	top: -11em;
+}
+
+body div#content div#content-inside.inside #main div.region #block-system-main.block div.content div.node-anuncios div.content div.field-name-field-rating, div.field-name-field-caracteristica, div.field-name-field-stock{
+	position: relative;
+	bottom: 19em;
+}
+/* Themming de la vista del FRONT */
+body #content #content-inside.inside #main div.region #block-system-main.block div.content div.view-id-mostrar_anuncios_publicados div.view-content table.views-view-grid tbody tr td div.views-field-body{
+	height: 5em;
+}
+
+body #content #content-inside.inside #main div.region #block-system-main.block div.content div.view-id-mostrar_anuncios_publicados div.view-content table.views-view-grid tbody tr td div.views-field-title{
+	height: 2em;
+}
+
+body #content #content-inside.inside #main div.region #block-system-main.block div.content div.view-id-mostrar_anuncios_publicados div.view-content table.views-view-grid tbody tr td div.views-field-php{
+	height: 5em;
+}
+/* Aqui termina el themming del FRONT */
+body div#content div#content-inside.inside div#main div.region div#block-system-main.block div.content div.node-anuncios div.content div.field-name-field-categorias{
+	position: relative;
+	top: -19em;
+}
+
+body #content #content-inside.inside #main div.region div#block-system-main.block div.content div.node-anuncios div.content{
+	height: 23em;
+}
+
+body #content #content-inside.inside #main div.region #block-system-main.block div.content #anuncios-node-form div #node_anuncios_form_group_especificaciones div.fieldset-wrapper #edit-field-caracteristica{
+	bottom: 0;
+}
+
+body #content #content-inside.inside #main div.region #block-system-main.block div.content #anuncios-node-form div #node_anuncios_form_group_especificaciones div.fieldset-wrapper #edit-field-stock{
+	bottom: 0;
 }

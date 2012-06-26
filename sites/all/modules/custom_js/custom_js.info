@@ -1,0 +1,5 @@
+name = Mi propio JS
+description = Añade un JS en Drupal 7 creado desde 0
+package = San Ignacio de Loyola
+version = VERSION
+core = 7.x

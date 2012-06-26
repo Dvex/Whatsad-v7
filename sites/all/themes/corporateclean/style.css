@@ -396,7 +396,10 @@ div.messages.status a, div.messages.error a, div.messages.warning a { color:#fff
 */
 table { border-collapse: collapse; width:100%; }
 
-table, td { border: 1px solid #bbbbbb; }
+table, td { /*border: 1px solid #bbbbbb;*/
+	border-left: 3px solid #BBBBBB !important;
+	border-right: 3px solid #BBBBBB !important
+ }
 
 table th { background:#222222; color:#ffffff; font-weight:bold; border:none; }
 
