@@ -22,26 +22,44 @@ body div#content div#content-inside.inside div#main div.region div#block-system-
 }
 
 body div#content div#content-inside.inside div#main div.region div#block-system-main.block div.content div.node-anuncios div.content div.field-name-field-image{
-	left: 15em;
+	left: 18em;
 	position: relative;
-	top: -11em;
+	top: -8em;
 }
 
 body div#content div#content-inside.inside #main div.region #block-system-main.block div.content div.node-anuncios div.content div.field-name-field-rating, div.field-name-field-caracteristica, div.field-name-field-stock{
 	position: relative;
 	bottom: 19em;
 }
+
+body #content #content-inside.inside #main div.region #block-system-main.block div.content div.node-anuncios div.content div.field-name-field-contactar-autor{
+	position: relative;
+	bottom: 22em;
+	left: 13em;
+}
+
+body #content #content-inside.inside #main div.region #block-system-main.block div.content div.node-anuncios div.content div.field-name-field-hacer-trato{
+	position: relative;
+	bottom: 25em;
+	left: 35em;
+}
+
 /* Themming de la vista del FRONT */
 body #content #content-inside.inside #main div.region #block-system-main.block div.content div.view-id-mostrar_anuncios_publicados div.view-content table.views-view-grid tbody tr td div.views-field-body{
 	height: 5em;
+	width: 85%;
 }
 
 body #content #content-inside.inside #main div.region #block-system-main.block div.content div.view-id-mostrar_anuncios_publicados div.view-content table.views-view-grid tbody tr td div.views-field-title{
-	height: 2em;
+	height: 3em;
 }
 
 body #content #content-inside.inside #main div.region #block-system-main.block div.content div.view-id-mostrar_anuncios_publicados div.view-content table.views-view-grid tbody tr td div.views-field-php{
 	height: 5em;
+}
+
+body #content #content-inside.inside #main div.region #block-system-main.block div.content div.view-id-mostrar_anuncios_publicados div.view-content table.views-view-grid tbody tr td{
+	width: 33%;
 }
 /* Aqui termina el themming del FRONT */
 body div#content div#content-inside.inside div#main div.region div#block-system-main.block div.content div.node-anuncios div.content div.field-name-field-categorias{
@@ -59,4 +77,8 @@ body #content #content-inside.inside #main div.region #block-system-main.block d
 
 body #content #content-inside.inside #main div.region #block-system-main.block div.content #anuncios-node-form div #node_anuncios_form_group_especificaciones div.fieldset-wrapper #edit-field-stock{
 	bottom: 0;
+}
+
+body #content #content-inside.inside #main div.region #block-system-main.block div.content div.node-anuncios div.clearfix #comments div.comment div.clearfix div.content{
+	height:0;
 }

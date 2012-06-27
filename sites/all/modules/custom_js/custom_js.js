@@ -16,4 +16,7 @@ jQuery(document).ready(function($){
 			$('#edit-field-stock-und-0-value').val(1);
 		}
 	});
+
+	$('#field-contactar-autor-add-more-wrapper').css('display','none');
+	$('#field-hacer-trato-add-more-wrapper').css('display', 'none');
 });

@@ -8,3 +8,124 @@ function custom_js_form_alter(&$form, &$form_state, $form_id) {
   		drupal_add_js(drupal_get_path('module','custom_js').'/custom_js.js');
 	}
 }
+
+/*
+* Implements HOOK_MENU();
+*/
+
+function custom_js_menu(){
+	$items = array();
+
+	$items['hacer_trato'] = array(
+		'title' => 'Has el trato con el anunciante',
+		'description' => 'Vas a poder hacer trato con el anunciante via email',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('custom_js_form'),
+		'access callback' => TRUE,
+		'type' => MENU_CALLBACK
+	);
+
+	return $items;
+}
+
+/*
+* Implements HOOK_FORM()
+*/
+function custom_js_form(){
+ 	$form['from'] = array(
+    	'#type' => 'textfield',
+    	'#title' => 'De: ',
+    	'#size' => '30',
+      '#default_value' => $_GET['from'],
+    	'#attributes' =>array('placeholder' => t('Dirección de Correo'))
+  	);
+
+  	$form['to'] = array(
+    	'#type' => 'textfield',
+    	'#title' => 'Para: ',
+    	'#size' => '30',
+      '#default_value' => $_GET['to'],
+    	'#attributes' =>array('placeholder' => t('Dirección de Correo'))
+  	);
+
+  	$form['subject'] = array(
+    	'#type' => 'textfield',
+    	'#title' => 'Asunto: ',
+    	'#size' => '90',
+    	'#attributes' =>array('placeholder' => t('Asunto del mensaje'))
+  	);
+
+  	$form['message'] = array(
+    	'#type' => 'text_format',
+    	'#title' => 'Mensaje: ',
+    	'#size' => '20',
+    	'#format'=>'full_html'
+  	);
+
+	$form['submit'] = array(
+	    '#type' => 'submit',
+    	'#value' => t('Enviar'),
+  	);
+
+  	return $form;
+}
+
+function custom_js_form_validate($form, &$form_state) {
+  $from_email = $form_state['values']['from'];
+  $to_email = $form_state['values']['to'];
+  if (!valid_email_address($from_email) || !valid_email_address($to_email)) {
+  	form_set_error('email', 'Sorry. Your or Destination email address,' . $valid_email . ', is not valid. Please submit a valid E-mail address.');
+  }
+}
+
+function custom_js_form_mail($key, &$message, $params) {
+
+  $headers = array(
+    'MIME-Version' => '1.0',
+    'Content-Type' => 'text/html; charset=UTF-8;',
+    'Content-Transfer-Encoding' => '8Bit',
+    'X-Mailer' => 'Drupal'
+  );
+
+  foreach ($headers as $key => $value) {
+    $message['headers'][$key] = $value;
+  }
+
+  $message['subject'] = $params['subject'];
+  $message['body'] = $params['body'];
+}
+
+function custom_js_form_submit($form, &$form_state) {
+    $from_email = $form_state['values']['from'];
+    $to_email = $form_state['values']['to'];
+    $body[] = $form_state['values']['message'];
+    $subject = $form_state['values']['subject'];
+
+    $params = array(
+    'body' => $body,
+    'subject' => $subject
+    );
+
+    if (drupal_mail('custom_js_form', 'key', $to_email, language_default(), $params, $from_email, TRUE))
+    {
+        drupal_goto('anuncios');
+        drupal_set_message('Felicidades has contactado al anunciante.');
+    } else {
+        drupal_goto('anuncios');
+        drupal_set_message('Se ha encontrado un error. Porfavor, intente mas tarde.');
+    }
+}
+
+function custom_js_node_presave($node){
+  global $user;
+  $me_email = db_query("SELECT mail FROM users WHERE uid = :author",array(':author' => $user->uid))->fetchField();
+  if($node->type == 'anuncios'){
+    $author = $node->uid;
+    $name = db_query("SELECT name FROM users WHERE uid = :author",array(':author' => $author))->fetchField();
+    $mail = db_query("SELECT mail FROM users WHERE uid = :author",array(':author' => $author))->fetchField();
+    $node->field_contactar_autor['und'][0]['title']['value'] = "Contactar con $name";
+    $node->field_contactar_autor['und'][0]['url']['value'] = "user/$author/contact";
+    $node->field_hacer_trato['und'][0]['title']['value'] = "Realizar trato con $name";
+    $node->field_hacer_trato['und'][0]['url']['value'] = "hacer_trato?to=$mail&from=$me_email";
+  }
+}
