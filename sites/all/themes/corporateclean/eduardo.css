@@ -82,3 +82,21 @@ body #content #content-inside.inside #main div.region #block-system-main.block d
 body #content #content-inside.inside #main div.region #block-system-main.block div.content div.node-anuncios div.clearfix #comments div.comment div.clearfix div.content{
 	height:0;
 }
+
+body #header-inside-left a img{
+	width: 9em;
+}
+
+body #header-inside-left{
+	width: 20em;
+}
+
+body #block-search-form{
+	position: relative;
+	left: 6em;
+	top: 3em;
+}
+
+#console div.error{
+	display: none;
+}
