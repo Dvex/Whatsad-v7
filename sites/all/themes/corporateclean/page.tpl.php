@@ -64,7 +64,7 @@
                 
                 <!--slider-item content-->
                 <div style="float:left; padding:0 30px 0 0;">
-                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-1.jpg"/>
+                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/WhatsAadlogo.png"/>
                 </div>
                 <h2>Quiénes Somos</h2>
                 <strong>Enviado por</strong><br/>
@@ -84,7 +84,7 @@
             
                 <!--slider-item content-->
                 <div style="float:right; padding:0 0 0 30px;">
-                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-2.jpg"/>
+                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/Whatsad.png"/>
                 </div>
                 <h2>Misión</h2>
                 <strong>Enviado por</strong><br/>
@@ -104,7 +104,7 @@
             
                 <!--slider-item content-->
                 <div style="float:right; padding:0 0 0 30px;">
-                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-1.jpg"/>
+                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/WhatsAadlogo.png"/>
                 </div>
                 <h2>Visión</h2>
                 <strong>Enviado por</strong><br/>
@@ -142,7 +142,7 @@
                 
                 <!--slider-item content-->
                 <div style="float:left; padding:0 30px 0 0;">
-                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-1.jpg"/>
+                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/Whatsad.png"/>
                 </div>
                 <h2>Porqué se creó "Whats Ad"</h2>
                 <strong>Enviado por</strong><br/>
